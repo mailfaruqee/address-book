@@ -2,38 +2,45 @@ const contacts = [
     {
         id: 1,
         fullName: "Sayyid Al Murtadho",
-        age: 22,
-        phone: "+6281234567890",
-        office: "Vriens and Partners"
+        YoE: 1,
+        office: "Vriens and Partners",
+        location: { lat: -6.213029, lng: 106.821389 } 
     },
     {
         id: 2,
-        fullName: "Wahyu Agung Primantaka",
-        age: 23,
-        phone: "+6280987654321",
-        office: "Antam"
+        fullName: "Muhammad Ilyas Irfan Syiraaj",
+        YoE: 1,
+        office: "The Ministry of Public Works and Housing",
+        location: { lat: -6.236877, lng: 106.800810 }
     },
     {
         id: 3,
-        fullName: "Ammar",
-        age: 20,
-        phone: "+623216549870",
-        office: "UGM"
+        fullName: "Muhammad Rasyid Galela",
+        YoE: 1,
+        office: "Schlumberger",
+        location: { lat: -6.2350464, lng: 106.8233347 } 
+    },
+    {
+        id: 4,
+        fullName: "Hatma",
+        YoE: 10,
+        office: "PWC",
+        location: { lat: -6.2145939, lng: 106.8162992 } 
     },
 ];
 
-for (let index = 0; index < contacts.length; index++) {
-    // const contact = contacts[index];
-    const {id, fullName, phone, age} = contacts[index];
-    // let ageCategory = "";
-    const ageCategory = age > 21 ? "has graduated" : "is still in college";
+// Initialize the map
+const map = L.map('map').setView([-6.200000, 106.816666], 12);
 
-    // if (contact.age > 21) {
-    //     ageCategory = "has graduated";
-    // } else {
-    //     ageCategory = "still struggle with undergrad final thesis"
-    // }
-    // console.log(`${contact.id}. ${contact.fullName} (${contact.phone}) ${ageCategory}`);
-    console.log(`${id}. ${fullName} (${phone}) ${ageCategory}`);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
 
-}
+// Add markers to the map
+contacts.forEach(contact => {
+    const marker = L.marker([contact.location.lat, contact.location.lng]).addTo(map);
+    marker.bindPopup(`<b>${contact.fullName}
+    </b><br>${contact.office}
+    </b><br>${contact.YoE} YoE`);
+});
