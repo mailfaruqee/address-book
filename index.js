@@ -2,30 +2,23 @@ const contacts = [
   {
     id: 1,
     fullName: "Sayyid Al Murtadho",
-    year_of_experience: 1,
+    phone: "08120987654321",
     company: "Vriens and Partners",
     coordinate: { lat: -6.213029, lng: 106.821389 },
   },
   {
     id: 2,
     fullName: "Muhammad Ilyas Irfan Syiraaj",
-    year_of_experience: 1,
+    phone: "08213141516171",
     company: "The Ministry of Public Works and Housing",
     coordinate: { lat: -6.236877, lng: 106.80081 },
   },
   {
     id: 3,
     fullName: "Muhammad Rasyid Galela",
-    year_of_experience: 1,
+    phone: "0852123456789",
     company: "Schlumberger",
     coordinate: { lat: -6.2350464, lng: 106.8233347 },
-  },
-  {
-    id: 4,
-    fullName: "Muhammad Hasan",
-    year_of_experience: 5,
-    company: "PWC",
-    coordinate: { lat: -6.2145939, lng: 106.8162992 },
   },
 ];
 
@@ -46,8 +39,8 @@ contacts.forEach((contact) => {
 
   marker.bindPopup(`<h1>${contact.fullName}</h1>
     <div>
-    <p>${contact.company}</p>
-    <p>${contact.year_of_experience} YoE </p>
+    <p>Company: ${contact.company}</p>
+    <p>Phone: ${contact.phone} </p>
     </div>`);
 
   // Add click event listener to marker
@@ -66,8 +59,8 @@ function addContactToMap(contact) {
 
   marker.bindPopup(`<h1>${contact.fullName}</h1>
     <div>
-    <p>${contact.company}</p>
-    <p>${contact.year_of_experience} YoE </p>
+    <p>Company: ${contact.company}</p>
+    <p>Phone: ${contact.phone} </p>
     </div>`);
 }
 
@@ -80,7 +73,7 @@ addContactForm.addEventListener("submit", function (event) {
   // Get form values
   const fullName = document.getElementById("fullName").value;
   const company = document.getElementById("company").value;
-  const yearOfExperience = document.getElementById("yearOfExperience").value;
+  const phone_number = document.getElementById("phone_number").value;
   const latitude = parseFloat(document.getElementById("latitude").value);
   const longitude = parseFloat(document.getElementById("longitude").value);
 
@@ -91,7 +84,7 @@ addContactForm.addEventListener("submit", function (event) {
   const newContact = {
     id: id,
     fullName: fullName,
-    year_of_experience: yearOfExperience,
+    phone: phone_number,
     company: company,
     coordinate: { lat: latitude, lng: longitude },
   };
