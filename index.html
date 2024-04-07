@@ -8,14 +8,14 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
   <body>
-    <h1>GeoContact: Plotting My Friend's Company Sites</h1>
+    <h1>GeoContact: Plotting My Friend's Sites</h1>
     <div>
       <p>
         Welcome to GeoContact, your personal address book with a spatial twist!
         In this project, we've taken the traditional concept of an address book
         and infused it with the power of maps and spatial data. Now, not only
         can you keep track of your friends' contact information, but you can
-        also visualize their company locations on an interactive map.
+        also visualize their locations on an interactive map.
       </p>
     </div>
 
@@ -25,12 +25,9 @@
     <!-- Form to add new contact -->
     <form id="addContactForm">
       <input type="text" id="fullName" placeholder="Full Name" required />
-      <input type="text" id="company" placeholder="Company" required />
-      <input type="number" id="phone_number" placeholder="phone" required />
-      <input type="text" id="latitude" placeholder="Latitude" required />
-      <input type="text" id="longitude" placeholder="Longitude" required />
-
-      <button type="submit">Add Contact</button>
+      <input type="email" id="email" placeholder="E-mail" required />
+      <input type="number" id="phone-number" placeholder="Phone" required />
+      <button type="submit" id="addContactButton" disabled>Add Contact</button>
     </form>
 
     <script src="index.js"></script>
