@@ -1,29 +1,7 @@
-const contacts = [
-  {
-    id: 1,
-    fullName: "Sayyid Al Murtadho",
-    email: "sayyidam@example.com",
-    phone: "08120987654321",
-    coordinate: { lat: -6.213029, lng: 106.821389 },
-  },
-  {
-    id: 2,
-    fullName: "Muhammad Ilyas Irfan Syiraaj",
-    email: "ilyas@example.com",
-    phone: "08213141516171",
-    coordinate: { lat: -6.236877, lng: 106.80081 },
-  },
-  {
-    id: 3,
-    fullName: "Muhammad Rasyid Galela",
-    email: "rasyidgalela@example.com",
-    phone: "0852123456789",
-    coordinate: { lat: -6.2350464, lng: 106.8233347 },
-  },
-];
+const contacts = [];
 
 // Initialize the map
-const map = L.map("map").setView([-6.2, 106.816666], 12);
+const map = L.map("map").setView([-6.2, 106.816666], 10);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -116,6 +94,7 @@ function handleFormSubmit(event) {
   }
 }
 
+// validate form
 function validateForm() {
   const fullName = document.getElementById("fullName").value.trim();
   const email = document.getElementById("email").value.trim();

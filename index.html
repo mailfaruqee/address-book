@@ -8,19 +8,18 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
   <body>
-    <h1>GeoContact: Plotting My Friend's Sites</h1>
+    <h1>GeoContact: Find Friends on the Fly</h1>
     <div>
       <p>
-        Welcome to GeoContact, your personal address book with a spatial twist!
-        In this project, we've taken the traditional concept of an address book
-        and infused it with the power of maps and spatial data. Now, not only
-        can you keep track of your friends' contact information, but you can
-        also visualize their locations on an interactive map.
+        Welcome to GeoContacts, the personalized address book with a
+        geographical enhancement. In this application, the classic structure of
+        an address book has been enriched with dynamic mapping capabilities.
+        It’s no longer just about keeping contact details; now, the locations of
+        friends are also pinpointed and visualized on an interactive map. This
+        integration of contact information with geospatial data provides a
+        comprehensive and connected overview of one's social network.
       </p>
     </div>
-
-    <!-- Contacts Data -->
-    <div id="map" style="height: 25rem; width: 60rem"></div>
 
     <!-- Form to add new contact -->
     <form id="addContactForm">
@@ -29,6 +28,9 @@
       <input type="number" id="phone-number" placeholder="Phone" required />
       <button type="submit" id="addContactButton" disabled>Add Contact</button>
     </form>
+
+    <!-- Contacts Data -->
+    <div id="map" style="height: 25rem; width: 60rem"></div>
 
     <script src="index.js"></script>
   </body>
