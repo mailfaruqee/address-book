@@ -1,4 +1,4 @@
-const contacts = [];
+let contacts = [];
 
 // Initialize the map
 const map = L.map("map").setView([-6.2, 106.816666], 10);
@@ -40,9 +40,27 @@ function addContactToMap(contact) {
 
   marker.bindPopup(`<h1>${contact.fullName}</h1>
     <div>
-    <p>E-Mail: ${contact.email} </p>
-    <p>Phone: ${contact.phone} </p>
+    <p>E-Mail: ${contact.email}</p>
+    <p>Phone: ${contact.phone}</p>
+    <button onclick="deleteContact('${contact.email}');">Delete Contact</button>
     </div>`);
+  marker._contactEmail = contact.email; // Associate the email with the marker
+}
+
+// Function to delete a contact
+function deleteContact(email) {
+  // Filter out the contact with the given email
+  contacts = contacts.filter((contact) => contact.email !== email);
+
+  // Update localStorage
+  localStorage.setItem("contacts", JSON.stringify(contacts));
+
+  // Remove the marker from the map
+  map.eachLayer((layer) => {
+    if (layer._contactEmail === email) {
+      map.removeLayer(layer);
+    }
+  });
 }
 
 // Function to handle form submission
@@ -115,3 +133,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // Event listener for form submission
 const addContactForm = document.getElementById("addContactForm");
 addContactForm.addEventListener("submit", handleFormSubmit);
+
+// Save to local storage
+const storedContacts = JSON.parse(localStorage.getItem("contacts"));
+if (storedContacts) {
+  storedContacts.forEach((contact) => {
+    contacts.push(contact);
+    addContactToMap(contact);
+  });
+}
