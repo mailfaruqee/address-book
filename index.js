@@ -39,11 +39,12 @@ function addContactToMap(contact) {
   ]).addTo(map);
 
   marker.bindPopup(`<h1>${contact.fullName}</h1>
-    <div>
-    <p>E-Mail: ${contact.email}</p>
+  <div>
+    <p>E-mail: ${contact.email}</p>
     <p>Phone: ${contact.phone}</p>
-    <button onclick="deleteContact('${contact.email}');">Delete Contact</button>
-    </div>`);
+    <button onclick="deleteContact('${contact.email}');" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete Contact</button>
+  </div>`);
+
   marker._contactEmail = contact.email; // Associate the email with the marker
 }
 

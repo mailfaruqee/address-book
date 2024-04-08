@@ -1,0 +1,12 @@
+.leaflet-popup-content-wrapper {
+  background-color: #fff; /* white background */
+  border-radius: 8px; /* rounded corners */
+  padding: 10px; /* some padding inside */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+}
+
+.leaflet-popup-content {
+  color: #333; /* dark grey text for better readability */
+  font-family: "Poppins", sans-serif; /* consistent font */
+  line-height: 1.6; /* space out lines of text a bit */
+}

@@ -11,7 +11,7 @@ GeoContact elevates the classic address book to a spatial dimension, enabling th
 
 ## Tech Stack
 
-- **Frontend:** The user interface is built using HTML, CSS, and JavaScript to deliver a seamless and responsive experience.
+- **Frontend:** The user interface is built using HTML, Tailwind CSS, and JavaScript to deliver a seamless and responsive experience.
 - **Mapping Library:** [Leaflet.js](https://leafletjs.com/) is used for rendering the interactive map and handling geolocation features.
 - **Storage:** Browser's Local Storage API is utilized to persist contact data across browser sessions.
 
