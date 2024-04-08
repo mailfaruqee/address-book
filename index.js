@@ -1,7 +1,7 @@
 let contacts = [];
 
 // Initialize the map
-const map = L.map("map").setView([-6.2, 106.816666], 10);
+const map = L.map("map").setView([-6.40349, 107.37954], 9);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
